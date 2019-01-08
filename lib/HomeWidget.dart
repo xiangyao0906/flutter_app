@@ -5,14 +5,14 @@ import 'package:flutter_app/ui/MinePage.dart';
 import 'package:flutter_app/widgt/navigation_icon_view.dart';
 
 // 创建一个 带有状态的 Widget Index
-class Index extends StatefulWidget {
+class HomeWidget extends StatefulWidget {
   //  固定的写法
   @override
-  State<StatefulWidget> createState() => new _IndexState();
+  State<StatefulWidget> createState() => new _HomeWidgetState();
 }
 
 // 要让主页面 Index 支持动效，要在它的定义中附加mixin类型的对象TickerProviderStateMixin
-class _IndexState extends State<Index> with TickerProviderStateMixin {
+class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
   int _currentIndex = 0; // 当前界面的索引值
   List<NavigationIconView> _navigationViews; // 底部图标按钮区域
   List<StatefulWidget> _pageList; // 用来存放我们的图标对应的页面
@@ -30,7 +30,9 @@ class _IndexState extends State<Index> with TickerProviderStateMixin {
     // 初始化导航图标
     _navigationViews = <NavigationIconView>[
       new NavigationIconView(
-          icon: new Icon(Icons.home), title: new Text("首页"), vsync: this),
+          icon: new Icon(Icons.home),
+          title: new Text("首页"),
+          vsync: this),
       // vsync 默认属性和参数
       new NavigationIconView(
           icon: new Icon(Icons.all_inclusive),
@@ -75,7 +77,7 @@ class _IndexState extends State<Index> with TickerProviderStateMixin {
           _navigationViews[_currentIndex].controller.forward();
           _currentPage = _pageList[_currentIndex];
         });
-      },
+      }
     );
 
     return new MaterialApp(
