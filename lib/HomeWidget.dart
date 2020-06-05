@@ -51,9 +51,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
 
     // 将我们 bottomBar 上面的按钮图标对应的页面存放起来，方便我们在点击的时候
     _pageList = <StatefulWidget>[
-      new Firstpage(),
-      new SencondPage(),
-      new ThirdPage(),
+      new FirstFragment(),
+      new SencondFragment(),
+      new ThirdFragment(),
     ];
     _currentPage = _pageList[_currentIndex];
   }

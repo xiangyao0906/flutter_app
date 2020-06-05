@@ -1,13 +1,19 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_app/entity/HomeEntity.dart';
+import 'package:flutter_app/ui/DeviceInfoActivity.dart';
+import 'package:flutter_app/ui/QrCodeActivity.dart';
+import 'package:flutter_app/ui/UiActivity.dart';
+import 'package:flutter_app/ui/UriLauncherActivity.dart';
 
-class Firstpage extends StatefulWidget {
+class FirstFragment extends StatefulWidget {
   @override
   FirstPageState createState() => new FirstPageState();
 }
 
-class FirstPageState extends State<Firstpage> {
+class FirstPageState extends State<FirstFragment> {
   HomeEntity entity;
   String title = "";
 
@@ -24,14 +30,31 @@ class FirstPageState extends State<Firstpage> {
         title: new Text("首页"),
         centerTitle: true,
       ),
-      body: new Center(
+      body: new Container(
         child: new Padding(
           padding: new EdgeInsets.all(8.0),
           child: Text(title),
         ),
       ),
+      floatingActionButton: FloatingActionButton(onPressed: _startUiActivity,
+        tooltip: '跳转到UiActivity',
+        child: Icon(Icons.arrow_forward),
+      ),
+
     );
   }
+
+  _startUiActivity(){
+
+//    Navigator.push(context, MaterialPageRoute(builder: (context)=> UiActivity()));
+//    Navigator.push(context, MaterialPageRoute(builder: (context)=> QrActivity()));
+//    Navigator.push(context, MaterialPageRoute(builder: (context)=> DeviceInfoActivity()));
+//    Navigator.push(context, MaterialPageRoute(builder: (context)=> UrlLauncherActivity(title: "Uri跳转测试",)));
+
+
+  }
+
+
 
   void getData() async {
     Response response =
@@ -44,4 +67,5 @@ class FirstPageState extends State<Firstpage> {
       }
     });
   }
+
 }
