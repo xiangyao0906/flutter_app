@@ -137,7 +137,7 @@ class UIBodyState extends State<UrlLauncherActivity> {
               const Padding(padding: EdgeInsets.all(16.0)),
               RaisedButton(
                 onPressed: () => setState(() {
-                  _launched = _launchInWebViewOrVC(toLaunch);
+                  _launched = _launchInWebViewOrVC("http://www.baidu.com");
                 }),
                 child: const Text('Launch in app'),
               ),

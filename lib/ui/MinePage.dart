@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flutter_app/ui/DeviceInfoActivity.dart';
+import 'package:flutter_app/ui/PickerImageActivity.dart';
+import 'package:flutter_app/ui/QrCodeActivity.dart';
+import 'package:flutter_app/ui/UiActivity.dart';
+import 'package:flutter_app/ui/UriLauncherActivity.dart';
 
-final List<String> entries = <String>['A', 'B', 'C'];
+final List<String> entries = <String>['UiActivity', 'QrActivity', 'DeviceInfoActivity',"PickerImageActivity","UrlLauncherActivity"];
 final List<int> colorCodes = <int>[600, 500, 100];
+
+
 
 class ThirdFragment extends StatefulWidget {
   @override
@@ -35,17 +41,28 @@ class ThirdFragmentState extends State<ThirdFragment> {
                 child: InkWell(
                   splashColor: Colors.blue.withAlpha(30),
                   onTap: () {
-                    Fluttertoast.showToast(
-                      msg: "This is Center Short Toast $index",
-                      toastLength: Toast.LENGTH_SHORT,
-                      gravity: ToastGravity.CENTER,
-                      timeInSecForIosWeb: 1,
-                    );
+                    switch(index){
+                      case 0:
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> UiActivity()));
+                        break;
+                      case 1:
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> QrActivity()));
+                        break;
+                      case 2:
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> DeviceInfoActivity()));
+                        break;
+                      case 3:
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => PickerImageActivity()));
+                        break;
+                      case 4:Navigator.push(context, MaterialPageRoute(builder: (context)=>UrlLauncherActivity(title:"Url跳轉",)));
+                        break;
+                    }
                   },
                   child: Container(
                     padding: const EdgeInsets.all(5),
                     alignment: Alignment.center,
-                    child: Text("$index"),
+                    child: Text(entries[index]),
                     height: 50,
                     decoration: new BoxDecoration(
                         color: Color.fromARGB(255, 112, 122, 133)),
