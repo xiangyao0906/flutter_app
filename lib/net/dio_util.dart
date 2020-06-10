@@ -107,7 +107,7 @@ class DioUtil {
   factory DioUtil() {
     return _singleton;
   }
-  bool isProxyChecked = true ;// a variable for debug
+  bool isProxyChecked = false ;// a variable for debug
   String proxy = '192.168.0.12:8888'; // ip:port
   DioUtil._init() {
 
