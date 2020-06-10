@@ -73,6 +73,9 @@ class FirstPageState extends State<FirstFragment>
   void getArticleData() async {
     WanRepository().getArticleListProject(0).then((list) {
       reposModel = list;
+      setState(() {
+        build(context);
+      });
     });
   }
 
