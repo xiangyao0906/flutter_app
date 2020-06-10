@@ -1,9 +1,10 @@
+import 'package:AndroidDaily/ui/DeviceInfoActivity.dart';
+import 'package:AndroidDaily/ui/PickerImageActivity.dart';
+import 'package:AndroidDaily/ui/QrCodeActivity.dart';
+import 'package:AndroidDaily/ui/UiActivity.dart';
+import 'package:AndroidDaily/ui/UriLauncherActivity.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/ui/DeviceInfoActivity.dart';
-import 'package:flutter_app/ui/PickerImageActivity.dart';
-import 'package:flutter_app/ui/QrCodeActivity.dart';
-import 'package:flutter_app/ui/UiActivity.dart';
-import 'package:flutter_app/ui/UriLauncherActivity.dart';
+
 
 final List<String> entries = <String>['UiActivity', 'QrActivity', 'DeviceInfoActivity',"PickerImageActivity","UrlLauncherActivity"];
 final List<int> colorCodes = <int>[600, 500, 100];

@@ -1,8 +1,8 @@
-import 'package:flutter_app/api/apis.dart';
-import 'package:flutter_app/common/common.dart';
-import 'package:flutter_app/entity/models.dart';
-import 'package:flutter_app/net/base_resp.dart';
-import 'package:flutter_app/net/dio_util.dart';
+import 'package:AndroidDaily/api/apis.dart';
+import 'package:AndroidDaily/common/common.dart';
+import 'package:AndroidDaily/entity/models.dart';
+import 'package:AndroidDaily/net/base_resp.dart';
+import 'package:AndroidDaily/net/dio_util.dart';
 
 class WanRepository {
   Future<List<BannerModel>> getBanner() async {

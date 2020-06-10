@@ -1,12 +1,14 @@
+import 'package:AndroidDaily/entity/HomeEntity.dart';
+import 'package:AndroidDaily/entity/models.dart';
+import 'package:AndroidDaily/repository/wan_repository.dart';
+import 'package:AndroidDaily/widgt/widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flukit/flukit.dart';
 import 'package:flustars/flustars.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/entity/HomeEntity.dart';
-import 'package:flutter_app/entity/models.dart';
-import 'package:flutter_app/repository/wan_repository.dart';
-import 'package:flutter_app/ui/PickerImageActivity.dart';
-import 'package:flutter_app/widgt/widgets.dart';
+
+import 'PickerImageActivity.dart';
+
 
 class FirstFragment extends StatefulWidget {
   @override

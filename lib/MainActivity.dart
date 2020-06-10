@@ -1,8 +1,8 @@
+import 'package:AndroidDaily/net/dio_util.dart';
+import 'package:AndroidDaily/res/colors.dart';
 import 'package:dio/dio.dart';
 import 'package:flustars/flustars.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/net/dio_util.dart';
-import 'package:flutter_app/res/colors.dart';
 import 'navigationBar.dart';
 import 'common/common.dart'; // 导入index.dart
 

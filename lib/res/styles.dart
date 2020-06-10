@@ -1,6 +1,7 @@
+import 'package:AndroidDaily/res/colors.dart';
+import 'package:AndroidDaily/res/dimens.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_app/res/colors.dart';
-import 'package:flutter_app/res/dimens.dart';
+
 
 class TextStyles {
   static TextStyle listTitle = TextStyle(

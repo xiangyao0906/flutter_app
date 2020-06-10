@@ -1,8 +1,8 @@
+import 'package:AndroidDaily/ui/HomePage.dart';
+import 'package:AndroidDaily/ui/IdeaPage.dart';
+import 'package:AndroidDaily/ui/MinePage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_app/ui/HomePage.dart';
-import 'package:flutter_app/ui/IdeaPage.dart';
-import 'package:flutter_app/ui/MinePage.dart';
 
 // 创建一个 带有状态的 Widget Index
 class HomeWidget extends StatefulWidget {
@@ -23,12 +23,12 @@ class _HomeWidgetState extends State<HomeWidget> {
     // 声明定义一个 底部导航的工具栏
     final BottomNavigationBar bottomNavigationBar = new BottomNavigationBar(
         items: [
-          _bottomItem("首页", 'images/ic_home_normal.png',
-              'images/ic_home_selected.png', 0),
-          _bottomItem("想法", 'images/ic_discovery_normal.png',
-              'images/ic_discovery_selected.png', 1),
+          _bottomItem("首页", 'assets/images/ic_home_normal.png',
+              'assets/images/ic_home_selected.png', 0),
+          _bottomItem("想法", 'assets/images/ic_discovery_normal.png',
+              'assets/images/ic_discovery_selected.png', 1),
           _bottomItem(
-              "我的", 'images/ic_hot_normal.png', 'images/ic_hot_selected.png', 2)
+              "我的", 'assets/images/ic_mine_normal.png', 'assets/images/ic_mine_selected.png', 2)
         ],
         currentIndex: _currentIndex, // 当前点击的索引值
         type: BottomNavigationBarType.fixed, // 设置底部导航工具栏的类型：fixed 固定
