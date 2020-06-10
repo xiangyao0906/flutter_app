@@ -1,6 +1,6 @@
-import 'package:AndroidDaily/entity/HomeEntity.dart';
 import 'package:AndroidDaily/entity/models.dart';
 import 'package:AndroidDaily/repository/wan_repository.dart';
+import 'package:AndroidDaily/widgt/repos_item.dart';
 import 'package:AndroidDaily/widgt/widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flukit/flukit.dart';
@@ -9,17 +9,20 @@ import 'package:flutter/material.dart';
 
 import 'PickerImageActivity.dart';
 
-
 class FirstFragment extends StatefulWidget {
   @override
   FirstPageState createState() => new FirstPageState();
 }
 
-class FirstPageState extends State<FirstFragment>with AutomaticKeepAliveClientMixin {
-  HomeEntity entity;
+class FirstPageState extends State<FirstFragment>
+    with AutomaticKeepAliveClientMixin {
   String title = "";
 
+  //banner
   List<BannerModel> bannerModel;
+
+  //article
+  List<ReposModel> reposModel;
 
   @override
   void initState() {
@@ -36,11 +39,14 @@ class FirstPageState extends State<FirstFragment>with AutomaticKeepAliveClientMi
         title: new Text("首页"),
         centerTitle: true,
       ),
-     body: Container(
-
-       child:buildBanner(bannerModel),
-
-     ),
+      body: Container(
+        child: ListView(
+          children: <Widget>[
+            buildBanner(bannerModel),
+            buildRepos(context, reposModel)
+          ],
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: _startUiActivity,
         tooltip: '跳转到UiActivity',
@@ -65,11 +71,30 @@ class FirstPageState extends State<FirstFragment>with AutomaticKeepAliveClientMi
   }
 
   void getArticleData() async {
-    WanRepository().getArticleListProject(0).then((list) {});
+    WanRepository().getArticleListProject(0).then((list) {
+      reposModel = list;
+    });
   }
 
   @override
   bool get wantKeepAlive => true;
+}
+
+Widget buildRepos(BuildContext context, List<ReposModel> list) {
+  if (ObjectUtil.isEmpty(list)) {
+    return new Container(height: 0.0);
+  }
+  List<Widget> _children = list.map((model) {
+    return new ReposItem(
+      model,
+      isHome: true,
+    );
+  }).toList();
+  return new Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    mainAxisSize: MainAxisSize.min,
+    children: _children,
+  );
 }
 
 Widget buildBanner(List<BannerModel> bannerModel) {

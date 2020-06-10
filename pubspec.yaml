@@ -27,8 +27,10 @@ dependencies:
   device_info: ^0.4.2+4
 
   url_launcher: ^5.4.10
-
+  provider: ^3.0.0+1
   flustars: ^0.3.2
+  # webview_flutter
+  webview_flutter: ^0.3.22+1
   # https://github.com/renefloor/flutter_cached_network_image
   cached_network_image: 2.0.0
   multi_image_picker: ^4.6.7
