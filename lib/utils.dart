@@ -29,5 +29,22 @@ class Utils {
     return (count >= 10 || title.length > 16) ? 14.0 : 18.0;
   }
 
+  static int getLoadStatus(bool hasError, List data) {
+    if (hasError) return LoadStatus.fail;
+    if (data == null) {
+      return LoadStatus.loading;
+    } else if (data.isEmpty) {
+      return LoadStatus.empty;
+    } else {
+      return LoadStatus.success;
+    }
+  }
 
+}
+
+class LoadStatus {
+  static const int fail = -1;
+  static const int loading = 0;
+  static const int success = 1;
+  static const int empty = 2;
 }

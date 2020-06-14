@@ -34,6 +34,7 @@ dependencies:
   # https://github.com/renefloor/flutter_cached_network_image
   cached_network_image: 2.0.0
   multi_image_picker: ^4.6.7
+  pull_to_refresh: ^1.5.7
 
   # https://github.com/flutterchina/flukit.
   flukit: ^1.0.2
