@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:AndroidDaily/ui/HomePage.dart';
 import 'package:AndroidDaily/ui/IdeaPage.dart';
 import 'package:AndroidDaily/ui/MinePage.dart';
@@ -17,8 +19,6 @@ class _HomeWidgetState extends State<HomeWidget> {
   PageController _pageController = PageController(initialPage: 0);
   DateTime lastTime;
 
-  
-
   @override
   Widget build(BuildContext context) {
     // 声明定义一个 底部导航的工具栏
@@ -28,8 +28,8 @@ class _HomeWidgetState extends State<HomeWidget> {
               'assets/images/ic_home_selected.png', 0),
           _bottomItem("想法", 'assets/images/ic_discovery_normal.png',
               'assets/images/ic_discovery_selected.png', 1),
-          _bottomItem(
-              "我的", 'assets/images/ic_mine_normal.png', 'assets/images/ic_mine_selected.png', 2)
+          _bottomItem("我的", 'assets/images/ic_mine_normal.png',
+              'assets/images/ic_mine_selected.png', 2)
         ],
         currentIndex: _currentIndex, // 当前点击的索引值
         type: BottomNavigationBarType.fixed, // 设置底部导航工具栏的类型：fixed 固定
@@ -74,7 +74,7 @@ class _HomeWidgetState extends State<HomeWidget> {
           child: Text(title,
               style: TextStyle(
                   color:
-                  Color(_currentIndex == index ? 0xff000000 : 0xff9a9a9a),
+                      Color(_currentIndex == index ? 0xff000000 : 0xff9a9a9a),
                   fontSize: 14))),
     );
   }

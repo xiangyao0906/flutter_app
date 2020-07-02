@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:AndroidDaily/entity/models.dart';
 import 'package:AndroidDaily/repository/wan_repository.dart';
 import 'package:AndroidDaily/widgt/repos_item.dart';
@@ -7,11 +9,12 @@ import 'package:flukit/flukit.dart';
 import 'package:flustars/flustars.dart';
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:AndroidDaily/utils.dart';
-
 
 import 'PickerImageActivity.dart';
 
+/// 首页
+/// <p>
+/// Created by xiangyao on 2020/7/1.
 class FirstFragment extends StatefulWidget {
   @override
   FirstPageState createState() => new FirstPageState();
@@ -188,4 +191,3 @@ class NumberSwipeIndicator extends SwiperIndicator {
     );
   }
 }
-
